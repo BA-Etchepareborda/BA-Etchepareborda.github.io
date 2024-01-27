@@ -1,212 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e0f2f1; /* Light blue */
-}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f2f1; /* Light blue */
+        }
+         header {
+            background-color: #1976d2; /* Darker blue */
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace; /* Change font to a monospace font */
+            position: relative; /* To make the typing effect relative to the header */
+        }
+        .container {
+            display: flex;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .left-section {
+            flex-basis: 33%;
+            padding: 20px;
+        }
+        .info-section p {
+            color: #666666;
+            font-size: 16px;
+        }
+        .right-section {
+            flex-basis: 66%;
+            padding: 20px;
+        }
+        .profile-pic {
+            text-align: center;
+        }
+        .profile-pic img {
+            max-width: 100%;
+            border-radius: 50%;
+        }
+        .personal-info,
+        .skills,
+        .certificates {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .projects {
+            text-align: center;
+        }
+        .project {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+        }
+        .project h2 {
+            color: #343a40;
+        }
+        .project p {
+            color: #666666;
+        }
+        .project img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .project a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+        .contact-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .contact-links a {
+            display: inline-block;
+            margin: 0 5px;
+            font-size: 14px;
+            color: #666666;
+            text-decoration: none;
+        }
+        .contact-links img {
+            width: 50px;
+            height: auto;
+        }
+        .expandable-window {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background-color: rgba(240, 240, 240, 0.9); /* Slightly opaque background */
+            backdrop-filter: blur(5px); /* Apply blur effect */
+            transition: right 0.3s ease-in-out;
+            z-index: 1000;
+            overflow-y: auto; /* Enable vertical scrolling */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px;
+        }
+        .expandable-content button {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue color for button */
+            color: #ffffff; /* White text */
+            border: none;
+            border-radius: 20px; /* Round button */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .expandable-content button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        .expand-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            width: 50px;
+            height: 50px;
+            background-color: #007bff; /* Blue color for button */
+            color: #ffffff; /* White text */
+            border: none;
+            border-radius: 50%; /* Round button */
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .expand-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
 
-header {
-    background-color: #1976d2; /* Darker blue */
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace; /* Change font to a monospace font */
-    position: relative; /* To make the typing effect relative to the header */
-}
+        h1, h2 {
+            font-weight: normal; /* Reset font weight */
+            margin: 0; /* Remove default margins */
+        }
 
-.container {
-    display: flex;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
+        /* Style for continuously typing and deleting text */
+        .typing-animation::after {
+            content: '|'; /* Initial cursor */
+            display: inline-block;
+            animation: blink-caret 0.75s infinite; /* Blinking cursor animation */
+        }
 
-.left-section {
-    flex-basis: 33%;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Delicate box background */
-    border-radius: 10px; /* Rounded corners */
-    margin-right: 10px; /* Add some space between sections */
-}
+        @keyframes blink-caret {
+            50% {
+                opacity: 0;
+            }
+        }
 
-.info-section p {
-    color: #666666;
-    font-size: 16px;
-}
+        .typing-text {
+            display: inline-block;
+            overflow: hidden; /* Hide overflow */
+            white-space: nowrap; /* Prevent line breaks */
+            width: 0; /* Initially hide text */
+            animation: typing 4s steps(50, end), blink-caret 0.75s step-end infinite; /* Typing and blinking cursor animation */
+        }
 
-.right-section {
-    flex-basis: 66%;
-    padding: 20px;
-}
-
-.profile-pic {
-    text-align: center;
-}
-
-.profile-pic img {
-    max-width: 100%;
-    border-radius: 50%;
-}
-
-.personal-info,
-.skills,
-.certificates {
-    text-align: center;
-    margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Delicate box background */
-    padding: 10px; /* Padding inside each section */
-    border-radius: 10px; /* Rounded corners */
-    margin-bottom: 20px; /* Add some space between sections */
-}
-
-.projects {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Delicate box background */
-    padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-}
-
-.project {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.project:hover {
-    transform: translateY(-5px);
-}
-
-.project h2 {
-    color: #343a40;
-}
-
-.project p {
-    color: #666666;
-}
-
-.project img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-.project a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-
-.contact-links {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.contact-links a {
-    display: inline-block;
-    margin: 0 5px;
-    font-size: 14px;
-    color: #666666;
-    text-decoration: none;
-}
-
-.contact-links img {
-    width: 50px;
-    height: auto;
-}
-
-.expandable-window {
-    position: fixed;
-    top: 0;
-    right: -400px;
-    width: 400px;
-    height: 100vh;
-    background-color: rgba(240, 240, 240, 0.9); /* Slightly opaque background */
-    backdrop-filter: blur(5px); /* Apply blur effect */
-    transition: right 0.3s ease-in-out;
-    z-index: 1000;
-    overflow-y: auto; /* Enable vertical scrolling */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px;
-}
-
-.expandable-content button {
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px 20px;
-    background-color: #007bff; /* Blue color for button */
-    color: #ffffff; /* White text */
-    border: none;
-    border-radius: 20px; /* Round button */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.expandable-content button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-.expand-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-    width: 50px;
-    height: 50px;
-    background-color: #007bff; /* Blue color for button */
-    color: #ffffff; /* White text */
-    border: none;
-    border-radius: 50%; /* Round button */
-    font-size: 24px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.expand-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-h1, h2 {
-    font-weight: normal; /* Reset font weight */
-    margin: 0; /* Remove default margins */
-}
-
-/* Style for continuously typing and deleting text */
-.typing-animation::after {
-    content: '|'; /* Initial cursor */
-    display: inline-block;
-    animation: blink-caret 0.75s infinite; /* Blinking cursor animation */
-}
-
-@keyframes blink-caret {
-    50% {
-        opacity: 0;
-    }
-}
-
-.typing-text {
-    display: inline-block;
-    overflow: hidden; /* Hide overflow */
-    white-space: nowrap; /* Prevent line breaks */
-    width: 0; /* Initially hide text */
-    animation: typing 4s steps(50, end), blink-caret 0.75s step-end infinite; /* Typing and blinking cursor animation */
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
      <header>
