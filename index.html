@@ -13,11 +13,13 @@
             padding: 0;
             background-color: #f8f9fa;
         }
-        header {
+         header {
             background-color: #343a40;
             color: #ffffff;
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
+            font-family: 'Courier New', Courier, monospace; /* Change font to a monospace font */
+            position: relative; /* To make the typing effect relative to the header */
         }
         .container {
             display: flex;
@@ -142,11 +144,49 @@
         .expand-button:hover {
             background-color: #0056b3; /* Darker blue on hover */
         }
+
+        h1, h2 {
+            font-weight: normal; /* Reset font weight */
+            margin: 0; /* Remove default margins */
+        }
+
+        /* Style for continuously typing and deleting text */
+        .typing-animation::after {
+            content: '|'; /* Initial cursor */
+            display: inline-block;
+            animation: blink-caret 0.75s infinite; /* Blinking cursor animation */
+        }
+
+        @keyframes blink-caret {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .typing-text {
+            display: inline-block;
+            overflow: hidden; /* Hide overflow */
+            white-space: nowrap; /* Prevent line breaks */
+            width: 0; /* Initially hide text */
+            animation: typing 4s steps(50, end), blink-caret 0.75s step-end infinite; /* Typing and blinking cursor animation */
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
+     <header>
         <h1>My Portfolio</h1>
+        <h2>
+            Baltazar Etchepareborda - <span class="typing-animation"><span class="typing-text">Continuously Learning</span></span>
+        </h2>
     </header>
 
     <div class="container">
