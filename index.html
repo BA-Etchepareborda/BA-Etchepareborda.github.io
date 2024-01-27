@@ -26,7 +26,9 @@
             margin: 0 auto;
             padding: 20px;
         }
-        .personal-info {
+        .personal-info,
+        .skills,
+        .certificates {
             flex-basis: 30%;
             padding: 20px;
             text-align: center;
@@ -42,7 +44,8 @@
         }
         .projects {
             flex-basis: 60%;
-            text-align: center; /* Center the projects */
+            text-align: center;
+            padding: 20px;
         }
         .project {
             margin-bottom: 20px;
@@ -51,7 +54,6 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
-            display: inline-block;
         }
         .project:hover {
             transform: translateY(-5px);
@@ -70,16 +72,6 @@
             display: block;
             text-decoration: none;
             color: inherit;
-        }
-        .skills,
-        .certificates {
-            flex-basis: 30%;
-            padding: 20px;
-        }
-        .skills ul,
-        .certificates ul {
-            list-style-type: none;
-            padding: 0;
         }
         .contact-links {
             text-align: center;
