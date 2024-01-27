@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,6 +42,7 @@
         }
         .projects {
             flex-basis: 60%;
+            text-align: center; /* Center the projects */
         }
         .project {
             margin-bottom: 20px;
@@ -51,6 +51,7 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
+            display: inline-block;
         }
         .project:hover {
             transform: translateY(-5px);
@@ -70,38 +71,40 @@
             text-decoration: none;
             color: inherit;
         }
-       .contact-links {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.contact-links a {
-    display: inline-block;
-    margin: 0 5px; /* Decrease the margin */
-    font-size: 14px; /* Adjust the font size */
-    color: #666666; /* Set the color */
-    text-decoration: none; /* Remove underline */
-}
-
-.contact-links img {
-    width: 20px; /* Set the width of the icons */
-    height: auto; /* Maintain aspect ratio */
-}
-         <title>Expandable Window</title>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
+        .skills,
+        .certificates {
+            flex-basis: 30%;
+            padding: 20px;
+        }
+        .skills ul,
+        .certificates ul {
+            list-style-type: none;
             padding: 0;
+        }
+        .contact-links {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .contact-links a {
+            display: inline-block;
+            margin: 0 5px;
+            font-size: 14px;
+            color: #666666;
+            text-decoration: none;
+        }
+        .contact-links img {
+            width: 20px;
+            height: auto;
         }
         .expandable-window {
             position: fixed;
             top: 0;
-            right: -300px; /* Initial position, off-screen */
+            right: -300px;
             width: 300px;
             height: 100vh;
             background-color: #f0f0f0;
-            transition: right 0.3s ease-in-out; /* Smooth transition */
-            z-index: 1000; /* Ensure it's above other content */
+            transition: right 0.3s ease-in-out;
+            z-index: 1000;
         }
         .expandable-content {
             padding: 20px;
@@ -114,76 +117,83 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            z-index: 1001; /* Ensure it's above the window */
+            z-index: 1001;
         }
     </style>
 </head>
-
 <body>
     <header>
         <h1>My Portfolio</h1>
     </header>
 
-    <div class="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>Python</li>
-        <li>SQL</li>
-        <li>Power BI</li>
-        <!-- Add more skills as needed -->
-    </ul>
-</div>
+    <div class="container">
+        <div class="personal-info">
+            <img src="your_image.jpg" alt="Your Name" class="profile-image">
+            <div class="profile-caption">
+                <p>Aspiring Data Analyst</p>
+            </div>
+        </div>
 
-<div class="certificates">
-    <h2>Certificates</h2>
-    <ul>
-        <li>Data Analyst Certificate from XYZ Institute</li>
-        <li>SQL Fundamentals Certificate from ABC Academy</li>
-        <!-- Add more certificates as needed -->
-    </ul>
-</div>
-    
-<div class="projects">
-    <div class="project">
-        <h2>Project 1</h2>
-        <div class="project-details">
-            <p>Description of Project 1</p>
-            <a href="#" class="project-button">Explore</a>
+        <div class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>Power BI</li>
+                <!-- Add more skills as needed -->
+            </ul>
+        </div>
+
+        <div class="certificates">
+            <h2>Certificates</h2>
+            <ul>
+                <li>Data Analyst Certificate from XYZ Institute</li>
+                <li>SQL Fundamentals Certificate from ABC Academy</li>
+                <!-- Add more certificates as needed -->
+            </ul>
         </div>
     </div>
 
-    <div class="project">
-        <h2>Project 2</h2>
-        <div class="project-details">
-            <p>Description of Project 2</p>
-            <a href="#" class="project-button">Explore</a>
+    <div class="projects">
+        <div class="project">
+            <h2>Project 1</h2>
+            <div class="project-details">
+                <p>Description of Project 1</p>
+                <a href="#" class="project-button">Explore</a>
+            </div>
         </div>
-    </div>
 
-    <div class="project">
-        <h2>Project 3</h2>
-        <div class="project-details">
-            <p>Description of Project 3</p>
-            <a href="#" class="project-button">Explore</a>
+        <div class="project">
+            <h2>Project 2</h2>
+            <div class="project-details">
+                <p>Description of Project 2</p>
+                <a href="#" class="project-button">Explore</a>
+            </div>
         </div>
-    </div>
 
-    <div class="project">
-        <h2>Project 4</h2>
-        <div class="project-details">
-            <p>Description of Project 4</p>
-            <a href="#" class="project-button">Explore</a>
+        <div class="project">
+            <h2>Project 3</h2>
+            <div class="project-details">
+                <p>Description of Project 3</p>
+                <a href="#" class="project-button">Explore</a>
+            </div>
         </div>
-    </div>
 
-    <div class="project">
-        <h2>Mini Projects on DataCamp</h2>
-        <div class="project-details">
-            <p>Explore my mini projects on DataCamp</p>
-            <a href="#" class="project-button">Explore</a>
+        <div class="project">
+            <h2>Project 4</h2>
+            <div class="project-details">
+                <p>Description of Project 4</p>
+                <a href="#" class="project-button">Explore</a>
+            </div>
         </div>
-    </div>
-</div>
+
+        <div class="project">
+            <h2>Mini Projects on DataCamp</h2>
+            <div class="project-details">
+                <p>Explore my mini projects on DataCamp</p>
+                <a href="#" class="project-button">Explore</a>
+            </div>
+        </div>
     </div>
 
     <div class="contact-links">
@@ -193,7 +203,7 @@
         <a href="https://github.com/yourusername"><img src="ghicon.png" alt="GitHub"></a>
     </div>
 
-     <div class="expandable-window" id="expandableWindow">
+    <div class="expandable-window" id="expandableWindow">
         <div class="expandable-content">
             <button onclick="alert('Button 1 clicked')">Button 1</button>
             <button onclick="alert('Button 2 clicked')">Button 2</button>
@@ -201,8 +211,7 @@
     </div>
     <button class="expand-button" onclick="toggleExpand()">+</button>
 
-</body>
-  <script>
+    <script>
         function toggleExpand() {
             var expandableWindow = document.getElementById('expandableWindow');
             if (expandableWindow.style.right === '0px') {
@@ -212,4 +221,6 @@
             }
         }
     </script>
+</body>
 </html>
+
