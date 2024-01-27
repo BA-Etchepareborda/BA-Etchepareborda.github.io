@@ -21,9 +21,28 @@
             text-align: center;
         }
         .container {
+            display: flex;
+            justify-content: space-between;
             max-width: 960px;
             margin: 0 auto;
             padding: 20px;
+        }
+        .personal-info {
+            flex-basis: 30%;
+            padding: 20px;
+            text-align: center;
+        }
+        .profile-image {
+            max-width: 100%;
+            border-radius: 50%;
+        }
+        .profile-caption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666666;
+        }
+        .projects {
+            flex-basis: 60%;
         }
         .project {
             margin-bottom: 20px;
@@ -51,22 +70,13 @@
             text-decoration: none;
             color: inherit;
         }
-        .contact-buttons {
+        .contact-links {
             text-align: center;
             margin-top: 50px;
         }
-        .contact-buttons a {
+        .contact-links a {
             display: inline-block;
             margin: 0 10px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .contact-buttons a:hover {
-            background-color: #0056b3;
         }
     </style>
 </head>
@@ -77,35 +87,24 @@
     </header>
 
     <div class="container">
-        <a href="project1.html" class="project">
-            <img src="project1.jpg" alt="Project 1">
-            <h2>Project 1</h2>
-            <p>Description of project 1</p>
-        </a>
+        <div class="personal-info">
+            <img src="your_image.jpg" alt="Your Name" class="profile-image">
+            <div class="profile-caption">
+                <p>Aspiring Data Analyst</p>
+                <p>Python, SQL, Power BI</p>
+            </div>
+        </div>
 
-        <a href="project2.html" class="project">
-            <img src="project2.jpg" alt="Project 2">
-            <h2>Project 2</h2>
-            <p>Description of project 2</p>
-        </a>
-
-        <a href="project3.html" class="project">
-            <img src="project3.jpg" alt="Project 3">
-            <h2>Project 3</h2>
-            <p>Description of project 3</p>
-        </a>
-
-        <a href="project4.html" class="project">
-            <img src="project4.jpg" alt="Project 4">
-            <h2>Project 4</h2>
-            <p>Description of project 4</p>
-        </a>
+        <div class="projects">
+            <!-- Your projects here -->
+        </div>
     </div>
 
-    <div class="contact-buttons">
-        <a href="mailto:your.email@example.com">Email</a>
-        <a href="https://wa.me/1234567890">WhatsApp</a>
-        <a href="https://www.linkedin.com/in/yourusername">LinkedIn</a>
+    <div class="contact-links">
+        <a href="mailto:your.email@example.com"><img src="email_logo.png" alt="Email"></a>
+        <a href="https://wa.me/1234567890"><img src="whatsapp_logo.png" alt="WhatsApp"></a>
+        <a href="https://www.linkedin.com/in/yourusername"><img src="linkedin_logo.png" alt="LinkedIn"></a>
+        <a href="https://github.com/yourusername"><img src="github_logo.png" alt="GitHub"></a>
     </div>
 </body>
 
