@@ -38,6 +38,38 @@
         .project p {
             color: #666666;
         }
+        .contact-buttons {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .contact-buttons a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .contact-buttons a:hover {
+            background-color: #0056b3;
+        }
+        .profile-section {
+            float: left;
+            width: 30%;
+            padding: 20px;
+            text-align: center;
+        }
+        .profile-image {
+            max-width: 100%;
+            border-radius: 50%;
+        }
+        .profile-caption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666666;
+        }
     </style>
 </head>
 
@@ -47,12 +79,26 @@
     </header>
 
     <div class="container">
-        <div class="project">
+        <div class="profile-section">
+            <img src="your_image.jpg" alt="Your Name" class="profile-image">
+            <div class="profile-caption">
+                <p>Aspiring Data Analyst</p>
+                <p>Python, SQL, Power BI</p>
+            </div>
+        </div>
+        <div class="project" style="margin-left: 35%;">
             <h2>Project 1</h2>
             <p>Description of project 1</p>
             <!-- Add more projects as needed -->
         </div>
     </div>
+
+    <div class="contact-buttons">
+        <a href="mailto:your.email@example.com">Email</a>
+        <a href="https://wa.me/1234567890">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/yourusername">LinkedIn</a>
+    </div>
 </body>
 
 </html>
+
