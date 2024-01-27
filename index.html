@@ -78,6 +78,35 @@
             display: inline-block;
             margin: 0 10px;
         }
+         <title>Expandable Window</title>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .expandable-window {
+            position: fixed;
+            top: 0;
+            right: -300px; /* Initial position, off-screen */
+            width: 300px;
+            height: 100vh;
+            background-color: #f0f0f0;
+            transition: right 0.3s ease-in-out; /* Smooth transition */
+            z-index: 1000; /* Ensure it's above other content */
+        }
+        .expandable-content {
+            padding: 20px;
+        }
+        .expandable-content button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .expand-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001; /* Ensure it's above the window */
+        }
     </style>
 </head>
 
@@ -106,6 +135,24 @@
         <a href="https://www.linkedin.com/in/yourusername"><img src="linkedin_logo.png" alt="LinkedIn"></a>
         <a href="https://github.com/yourusername"><img src="github_logo.png" alt="GitHub"></a>
     </div>
-</body>
 
+     <div class="expandable-window" id="expandableWindow">
+        <div class="expandable-content">
+            <button onclick="alert('Button 1 clicked')">Button 1</button>
+            <button onclick="alert('Button 2 clicked')">Button 2</button>
+        </div>
+    </div>
+    <button class="expand-button" onclick="toggleExpand()">+</button>
+
+</body>
+  <script>
+        function toggleExpand() {
+            var expandableWindow = document.getElementById('expandableWindow');
+            if (expandableWindow.style.right === '0px') {
+                expandableWindow.style.right = '-300px'; // Slide out
+            } else {
+                expandableWindow.style.right = '0px'; // Slide in
+            }
+        }
+    </script>
 </html>
